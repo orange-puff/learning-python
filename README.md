@@ -24,6 +24,10 @@ Therefore, as you look through `main.py`, you will note that there is nothing to
 ```
 if condition:
     code...
+elif condition2:
+    code...
+else:
+    code...
 ```
 
 Where condition is some expression that results in `True` or `False`. For instance `x == 5`, or `10 < 20`. `__name__=='__main__'` may look confusing. Most python projects will have many files. There is always a file that serves as the entry point for the project. That file is called a module in the context of the interpreter, and it is named `__main__`. Thus, each file has a `__name__` variable set by the interpreter, but  the file that the Python interpreter is using as the entry point has its `__name__` set to `'__main__'`, whereas files that aren't the entry point have `__name__` set to their file name, so `my_module.py` would have `__name__` set to `my_module`
