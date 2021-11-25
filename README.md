@@ -85,7 +85,7 @@ print(arr2[0])
 [-50, 2, 3]
 ```
 
-## Exercises
+### Exercises
 1. Write a function that reads through `data.txt` and stores the words in a list, and then returns that list. Make sure the words do not have `\n` with them. This code is already in 2-1, but familiarize yourself with it
 
     **Aside: `\n` is the ascii value for a new line. A text editor may show us a file content with words
@@ -98,4 +98,9 @@ print(arr2[0])
 2. Write a function that uses `1.` to get the contents of `data.txt` as a list. Find the word that has the highest frequency of `a` and return it.
 
     **The answer is `appearance`**
-  
+
+***
+   
+## Writing to Files: 2-2
+
+## CSV Files
