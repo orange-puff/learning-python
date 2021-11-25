@@ -102,5 +102,30 @@ print(arr2[0])
 ***
    
 ## Writing to Files: 2-2
+Open `2-2.py` to get started. This one will be short and sweet. We first open `data.txt` with `file = open('data.txt, 'r')`. Note that there is a second argument being passed. The argument is a character which defines which mode we are in. This is `read` mode.
 
-## CSV Files
+We then read the files contents with `file_content = file.read()`. Remember from section `2-1` that `file_content` now contains a string with the contents from `data.txt`. 
+
+**Note: We are closing the file after we are done with `file.close()`. Why? There are many reasons, but most importantly, the changes you've made to the file won't take effect until after the file has been closed. Another thing is that the file may be unreadable while it's opened. The best way to handle this is**
+
+```
+with open('data.txt', 'r') as f:
+    contents = f.read()
+```
+
+The `with` statement will automatically handle closing the file for us.
+
+Next we open the file we want to write to with `file_to_write = open('new_data.txt', 'w')` where `'w'` is for write mode. It's okay if this file does not exist. If it does not, the call to this method will create it as long as we specify `write` mode.
+
+**Note: When opening a file with open(file, 'w'), anything we write to that file will overwrite what was there before. If we want to open it and write *more* to it, we need to pass `a` for `append` mode.**
+
+### Exercises
+1. Read all the contents of `data.txt`. Then, write them to a new file called `data_and.txt` where each word has `and` appended to it. Each word should still be on its own line.
+
+2. **Fizz Buzz** Write a function with parameter n, which is an int. Write the results of this function to a file called `fizz_buzz.txt`
+
+    For values `i` where `i` is in the inclusive range `1` to `n`, if `3 | i`, write `Fizz`, if `5 | i`, write `Buzz`, if `3 | i and 5 | i`, write `FizzBuzz`, else write `i`.
+    
+    **Note, it's better to add this values to a list first and then open the file to write all the contents to it**
+    
+## CSV Files: 2-3
