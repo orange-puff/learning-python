@@ -6,7 +6,7 @@ In this chapter, we will look at many common things in python very briefly. You 
 
 Open up `main.py` to get started.
 
-Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. `IMPORTANT:` Since the interpreter reads one line at a time, you need to declare your methods before calling them. You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python]keyword(https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
+Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. `IMPORTANT:` Since the interpreter reads one line at a time, you need to declare your methods before calling them. You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
 
 That would look something like
 
@@ -24,7 +24,7 @@ if condition:
     code...
 ```
 
-Where condition is some expression that results in `True` or `False`. For instance `x == 5`, or `10 < 20`. `__name__=='__main__'` may look confusing. Most python projects will have many files. There is always a file that serves as the entry point for the project. That file is called a module in the context of the interpreter, and it is named `__main__`. Thus, each file has a `__name__` variable set by the interpreter, but the file the file that the Python interpreter is the entry point and has `__name__=='__main__'`
+Where condition is some expression that results in `True` or `False`. For instance `x == 5`, or `10 < 20`. `__name__=='__main__'` may look confusing. Most python projects will have many files. There is always a file that serves as the entry point for the project. That file is called a module in the context of the interpreter, and it is named `__main__`. Thus, each file has a `__name__` variable set by the interpreter, but  the file that the Python interpreter is using as the entry point has its `__name__` set to `'__main__'`, whereas files that aren't the entry point have `__name__` set to their file name, so `my_module.py` would have `__name__` set to `my_module`
 
 On line `17` you'll notice the first function call. `for_loop(10)`. This calls the function declared on line `1`. You'll notice this function is declared as `def for_loop(n):`. `n` is called a `parameter`. It means that anytime you call `for_loop`, you must pass an `argument` to it, which is some value you are passing to the function. In this case, the `argument` is `10`.
 
@@ -99,11 +99,11 @@ You will notice at the top there is the line `import math`. This is an incredibl
 
 Let's go over some of the important ones
 
-`math.sqrt(5)` returns the square root of 5. What if we want the floor of that? `int(math.sqrt(5))` or `math.ceil(math.sqrt(5))`. What if we want the ceiling of that? `math.ceil(math.sqrt(5))`. How about if we want to round that? `round(math.sqrt(5))`
+`math.sqrt(5)` returns the square root of 5. What if we want the floor of that? `int(math.sqrt(5))` or `math.floor(math.sqrt(5))`. What if we want the ceiling of that? `math.ceil(math.sqrt(5))`. How about if we want to round that? `round(math.sqrt(5))`
 
-What if we want to do exponentiation? We can do `math.pow(2, 4)` which is `16` or `2 ** 4`
+What if we want to do exponentiation? We can do `math.pow(2, 4)` or `2 ** 4`, which is `16`
 
-`math` has the exponential and logarithmic function built in as well as all standard trigonometry functions.
+`math` has the exponential and logarithmic function built in as well as all standard trigonometry functions, and much more.
 
 ### Excercises
 1. `print` the ceiling of the square root of 16 to the power of 5 in one line **(Answer = 1024)**
@@ -120,7 +120,7 @@ The `list` data structure is one of the most important that is built into Python
 
 We can also use something called `list comprehension` and the `range` function. `range`. [For a full list of Python functions, see](https://docs.python.org/3/library/functions.html)
 
-`range` has 3 `overloads, meaning it has 3 separate signatures with different amounts of parameters. 
+`range` has 3 `overloads`, meaning it has 3 separate signatures with different amounts of parameters. 
 
 ```
 range(10) returns an iterable with values 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -130,9 +130,10 @@ range(1, 10, 2) returns an iterable with values 1, 3, 5, 7, 9
 
 Now, we can combine that with `list comprehension` like
 
-`arr = [i for i in range(10]`, which could also simply be `arr = list(range(10))
+`arr = [i for i in range(10]`, which could also simply be `arr = list(range(10))`
 
-But we can use conditionals in list comprehension like `arr = [i for i in range(10) if i % 2 == 0]`
+We can also use conditionals in list comprehension like `arr = [i for i in range(10) if i % 2 == 0]` which is `[0, 2, 4, 6, 8]`, or 
+`arr = [i if i % 2 == 0 else -1 for i in range(10]` which is `[0, -1, 2, -1, 4, -1, 6, -1, 8, -1]`.
 
 Just like we can do
 
@@ -162,7 +163,7 @@ s = set([1, 2, 3, 4])
 
 When we do something like `if 5 in arr:`, where `arr` is a `list`, this is implicitly searching the entire list `arr` for `5`. We can easily imagine that `arr` has many values and this search could take a long time, assuming `5` doesn't appear early in the list. 
 
-This is where sets come in. When doing `if 5 in s:` where `s` is a `set`, this search happens in what we call `constant` time (whereas we call the search of the list, linear time). This is also true for insertions and deletions.
+This is where sets come in. When doing `if 5 in s:` where `s` is a `set`, this search happens in what we call `constant` time (whereas we call the search of the list `linear` time). This is also true for insertions and deletions.
 
 Therefore, sets are indispensable when we need fast lookup.
 
@@ -183,7 +184,7 @@ arr = [1, 2, 3, 4, 5]
 print(arr[2]) # because indexes start at 0
 ``` 
 
-`dictionary` allows you to index by a `key` of your choice. The `key` corresponds to a `value`. A `key` can be anything that is immutable, meaning unchanging. So a `key` can be a `string`, an `int`, a `tuple`. A `value` can be basically anything
+`dictionary` allows you to index by a `key` of your choice. A `key` can be anything that is immutable, meaning unchanging. So a `key` can be a `string`, an `int`, a `tuple`. The `key` corresponds to a `value`, which is the data associated with a `key`. A `value` can be basically anything
 
 `dictionary` is similar to `set` in that it has constant time lookup, storage, and deletion
 
@@ -199,11 +200,13 @@ Implement the solutions to the following questions by writing a function for eac
     For instance, given `[1, 2, 3, 4]` returns `[4, 3, 2, 1]`
 4. Write a function that takes a `list` and returns the most frequent element in the list, if there isn't one, returns `None`
 
-    For instance, given `[1, 2, 3, 4]` returns `None`, `[1, 2, 2, 3, 4]` returns `2`, `["Hello", "a", 'b', "c", "b"]` returns `b`
+    For instance, given `[1, 2, 3, 4]` returns `None`, `[1, 2, 2, 3, 4]` returns `2`, `["Hello", "a", 'b', 'c', "b"]` returns `b`
     
     `Hint: You can use the counter code in 1-3.py, but you'll still have more work to do to find the most frequent value.`
 5. Write a function that takes the following dictionary and returns a list with all of those values combined
 
     `m = {1: [1, 2, 3], 2: [4, 5, 6], 3: [7, 8, 9], 4: [10, 11, 12]}`
 
-    should return `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`. Note that the key here is irrelevant and we could have used a list of lists. Also, note that dictionaries do not guarantee order when iterating.
+    should return `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`.
+    
+    **Note that the key here is irrelevant and we could have used a list of lists. Also, note that dictionaries do not guarantee order when iterating, so we won't necessarily be iterating keys in order `1`, `2`, `3`, `4`.**
