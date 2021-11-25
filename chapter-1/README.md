@@ -6,7 +6,7 @@ In this chapter, we will look at many common things in python very briefly. You 
 
 Open up `main.py` to get started.
 
-Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. **IMPORTANT: Since the interpreter reads one line at a time, you need to declare your methods before calling them.**
+Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. **IMPORTANT: Since the interpreter reads one line at a time, you need to declare yourfunctions before calling them.**
  
 You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
 
@@ -34,7 +34,7 @@ Where condition is some expression that results in `True` or `False`. For instan
 
 On line `17` you'll notice the first function call. `for_loop(10)`. This calls the function declared on line `1`. You'll notice this function is declared as `def for_loop(n):`. `n` is called a `parameter`. It means that anytime you call `for_loop`, you must pass an `argument` to it, which is some value you are passing to the function. In this case, the `argument` is `10`.
 
-On line `18` we call another method using a different type of loop called a `while loop`. 
+On line `18` we call another function using a different type of loop called a `while loop`. 
 
 A `for loop` can be read as `for value in iterable`, where `value` is a variable holding the value of some entry in the `iterable`, which is a set of objects we can `iterate` over.
 

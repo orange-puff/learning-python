@@ -13,16 +13,16 @@ We start by opening a file with the `open` method. This takes a string as argume
 
 `file = open(file_path)` means we now have a pointer to that file data. Now, we need to access it.
 
-We can do `file.readlines()` to return a list of strings, where each string is a line from the file. We can also do `file.read()` which return a string, this string contains all of the contents of the file. You can use whichever is appropriate depending on how the data look and what you want to do with it.
+We can do `file.readlines()` to return a list of strings, where each string is a line from the file. We can also do `file.read()` which returns a string, this string contains all of the contents of the file. You can use whichever is appropriate depending on how the data looks and what you want to do with it.
 
 **NOTE: `file` is a pointer to the beginning of the file content. When we do `file.readline()`, which reads the first line, `file` is now pointing at the next line** 
 
-We also have to clean the contents, and do so with our function `clean`. This is called an `impure` function because, instead of leaving the argument in its original state and creating a new value, altering it, and returning that, it alters the argument itself
+We also have to clean the contents, and do so with our function `clean`. This is called an `impure` function because, instead of leaving the argument in its original state and creating a new value, altering it, and returning that, it alters the argument itself.
 Present is also `clean_pure` and `clean_pure2` to see how to do this purely. 
 
 Notice in `clean_pure`, instead of saying `to_ret = lines`, we say `to_ret = [line for line in lines]`. Why?
 
-In Python, most things are references. `arr = [1, 2, 3]` means a reference, or a memory address, is stored in arr. `arr[1]` looks at that memory address and finds the value at `1`. So saying
+In Python, most things are references. `arr = [1, 2, 3]` means a reference, or a memory address, is stored in arr. `arr[1]` looks at that memory address and finds the value `1` index into that memory location, however large that may be. So saying
 `arr2 = arr` is simply saying `arr2` now holds the reference to the memory with `[1, 2, 3]`. Thus, we need to `copy` `arr` into `arr2`.
 
 Python gives us a simply way to do this:
@@ -88,12 +88,12 @@ print(arr2[0])
 ### Exercises
 1. Write a function that reads through `data.txt` and stores the words in a list, and then returns that list. Make sure the words do not have `\n` with them. This code is already in 2-1, but familiarize yourself with it
 
-    **Aside: `\n` is the ascii value for a new line. A text editor may show us a file content with words
+    **Aside: `\n` is the [ascii](https://www.asciitable.com) value for a new line. A text editor may show us a file content with words**
     ```
     word1
     word2
    ```
-    but that is read by a computer as `word1\nword2`**
+    **but that is read by a computer as `word1\nword2`**
     
 2. Write a function that uses `1.` to get the contents of `data.txt` as a list. Find the word that has the highest frequency of `a` and return it.
 
