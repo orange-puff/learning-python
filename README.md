@@ -6,7 +6,9 @@ In this chapter, we will look at many common things in python very briefly. You 
 
 Open up `main.py` to get started.
 
-Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. `IMPORTANT:` Since the interpreter reads one line at a time, you need to declare your methods before calling them. You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
+Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. **IMPORTANT: Since the interpreter reads one line at a time, you need to declare your methods before calling them.**
+ 
+You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
 
 That would look something like
 
