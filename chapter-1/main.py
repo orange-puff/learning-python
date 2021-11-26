@@ -19,3 +19,4 @@ if __name__=='__main__':
     print(function_with_return())
     function_without_return()
     x = 5
+    y = 2.7
