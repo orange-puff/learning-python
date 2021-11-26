@@ -6,9 +6,9 @@ In this chapter, we will look at many common things in python very briefly. You 
 
 Open up `main.py` to get started.
 
-Python is an interpreted language. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them. **IMPORTANT: Since the interpreter reads one line at a time, you need to declare yourfunctions before calling them.**
+Python is an interpreted language. Typically, languages are either `compiled` or `interpreted`. Typically, a compiled language will need a [compiler](https://en.wikipedia.org/wiki/Compiler) to translate source code files to machine code and then to link them together into an executable. Interpreted languages needs an [interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing) to read the source code files and execute them. When the python interpreter is running on `main.py`, for instance by calling `python main.py` from the terminal, it will read each line in the order that they show up and execute them.
  
-You probably already know what a function is. `def function_name():` is how you create a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
+You probably already know what a function is. If not, it is a callable group of logic. `def function_name():` is how you declare a function in Python. `def` is a [Python keyword](https://docs.python.org/3/reference/lexical_analysis.html#keywords), meaning it has some behavior associated with it that the interpreter knows about. Therefore, when creating variable names, you cannot use any of these keywords as the variable name. So `def = 5` would not work, but `def_ = 5` would. To interact with a function you must call it.
 
 That would look something like
 
@@ -43,6 +43,8 @@ On line `19` we wrap the `print` function around a call to `function_with_return
 On line `20` we call `function_without_return()`. If we tried to do `print(function_without_return())`, first`function_without_return` runs and outputs `155`. Since `function_without_return` returns nothing, the argument passed to `print` is `None`. `None` is another Python keyword that represents something without value. 
 
 Finally, on line `21`, we have `x = 5`. We call `x` a variable and say that we are `initializing x with value 5`. Now, in any place that you wanted to use the value `5`, you can instead use `x`
+
+**IMPORTANT: Since the interpreter reads one line at a time, you need to declare your functions before calling them.**
 
 ### Exercises 
 
