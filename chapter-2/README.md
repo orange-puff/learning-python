@@ -127,7 +127,9 @@ Next we open the file we want to write to with `file_to_write = open('new_data.t
     For values `i` where `i` is in the inclusive range `1` to `n`, if `3 | i`, write `Fizz`, if `5 | i`, write `Buzz`, if `3 | i and 5 | i`, write `FizzBuzz`, else write `i`.
     
     **Note, it's better to add this values to a list first and then open the file to write all the contents to it**
-    
+
+***
+
 ## CSV Files: 2-3
 Open `2-3.py` to get started.
 
