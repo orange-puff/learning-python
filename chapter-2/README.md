@@ -129,3 +129,8 @@ Next we open the file we want to write to with `file_to_write = open('new_data.t
     **Note, it's better to add this values to a list first and then open the file to write all the contents to it**
     
 ## CSV Files: 2-3
+Open `2-3.py` to get started.
+
+In this final section, we will talk about reading/writing from a different type of file called a [`csv` file](https://en.wikipedia.org/wiki/Comma-separated_values). We can store tabular data in these files, just like in Excel. It is very common for data sets to be stored in `csv` files.
+
+We start by reading the contents of the file. Note that we first open the file and then copy its data to a `list`. This is because we can only access the file data while the file is open, i.e. within the `with` statement.

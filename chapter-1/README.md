@@ -30,7 +30,7 @@ else:
     code...
 ```
 
-Where condition is some expression that results in `True` or `False`. For instance `x == 5`, or `10 < 20`. `__name__=='__main__'` may look confusing. Most python projects will have many files. There is always a file that serves as the entry point for the project. That file is called a module in the context of the interpreter, and it is named `__main__`. Thus, each file has a `__name__` variable set by the interpreter, but  the file that the Python interpreter is using as the entry point has its `__name__` set to `'__main__'`, whereas files that aren't the entry point have `__name__` set to their file name, so `my_module.py` would have `__name__` set to `my_module`
+Where condition is some expression that results in `True` or `False`. For instance `x == 5`, or `10 < 20`. `__name__=='__main__'` may look confusing. Most python projects will have many files. There is always a file that serves as the entry point for the project. These files are called modules in the context of the interpreter, and this specific file is named `__main__`. Thus, each file has a `__name__` variable set by the interpreter, but  the file that the Python interpreter is using as the entry point has its `__name__` set to `'__main__'`, whereas files that aren't the entry point have `__name__` set to their file name, so `my_module.py` would have `__name__` set to `my_module`
 
 On line `17` you'll notice the first function call. `for_loop(10)`. This calls the function declared on line `1`. You'll notice this function is declared as `def for_loop(n):`. `n` is called a `parameter`. It means that anytime you call `for_loop`, you must pass an `argument` to it, which is some value you are passing to the function. In this case, the `argument` is `10`.
 
