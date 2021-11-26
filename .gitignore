@@ -2,3 +2,6 @@
 *.DS_Store
 chapter-2/new_data.txt
 chapter-2/new_data_csv.csv
+chapter-2/birth_year.csv
+chapter-2/first_and_last_names.csv
+

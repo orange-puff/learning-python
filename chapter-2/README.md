@@ -192,7 +192,7 @@ c = 'T'
    
    But the order may be different.
    
-3. Read the data from `data_csv.csv`. Add a new column called `birth_year` which is determined by subtracting their age from the current year, assuming the current year is `2021`.
+3. Read the data from `data_csv.csv`. Add a new column called `birth_year` which is determined by subtracting their age from the current year, assuming the current year is `2021`. Write this to `birth_year.csv`
 
     The answer should be:
     ```
