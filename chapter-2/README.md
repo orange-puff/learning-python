@@ -133,4 +133,76 @@ Open `2-3.py` to get started.
 
 In this final section, we will talk about reading/writing from a different type of file called a [`csv` file](https://en.wikipedia.org/wiki/Comma-separated_values). We can store tabular data in these files, just like in Excel. It is very common for data sets to be stored in `csv` files.
 
-We start by reading the contents of the file. Note that we first open the file and then copy its data to a `list`. This is because we can only access the file data while the file is open, i.e. within the `with` statement.
+We start by reading the contents of the file. Note that we first open the file and then copy its data to a `list`. This is because we can only access the file data while the file is open, i.e. within the `with` statement. To access it outside of the `with` statement we must copy it to a `list`.
+
+We then output the data that is returned from `read_csv`
+
+Finally, we have a method that reads the csv file data by calling `read_csv`, iterates through each row, and if that row is not the first row, it capitalizes the `first_name` value and the `last_name` value. The `capitalize` function may look strange. Each character is represented by an integer, according to the [ASCII table](https://www.asciitable.com/). Note that `a` is 97, `b` is 98, and `z` is `122`, which is `97 + 25`. Thus, each lowercase letter is in order. The same is true of uppercase letters, where `A` is `65`, `B` is `66`, and so on. To convert a lowercase letter to an uppercase letter, we need a function that can give us a characters ASCII value. This function is `ord` in Python. The formula for converting a lowercase letter `c` to an uppercase letter is 
+
+`c = chr(ord(c) - ord('a') + ord('A'))`
+
+E.g. if `c = 't'`, we can look that up and see that `t` is `116` in ASCII. So
+
+```
+c = chr(ord(c) - ord('a') + ord('A'))`
+c = chr(116 - 97 + 65)
+c = chr(84)
+c = 'T'
+```
+
+### Exercises
+1. Read the data of `data_csv.csv` (you can use the function`read_csv`). Write a function that stores all of the *unique* first names in a set called `first_names` and all of the *unique* last names in a set called `last_names` and returns them both. In Python, to return multiple values we can simple do `return return1, return2`. To assign those values we can do `val1, val2 = method_with_2_return_values()`.
+
+2. Use the function from `1.` to get the `set` of first names and last names found in `data_csv.csv`. Write a function that combines every first name with every last name and writes it to a csv file named `first_and_last_names.csv` which has column `first_name` and `last_name`. 
+
+    The answer should be:
+    ```
+    first_name,last_name
+    dave,ray
+    dave,doe
+    dave,smith
+    dave,clay
+    dave,kong
+    henry,ray
+    henry,doe
+    henry,smith
+    henry,clay
+    henry,kong
+    ashley,ray
+    ashley,doe
+    ashley,smith
+    ashley,clay
+    ashley,kong
+    john,ray
+    john,doe
+    john,smith
+    john,clay
+    john,kong
+    king,ray
+    king,doe
+    king,smith
+    king,clay
+    king,kong
+    jane,ray
+    jane,doe
+    jane,smith
+    jane,clay
+    jane,kong
+   ```
+   
+   But the order may be different.
+   
+3. Read the data from `data_csv.csv`. Add a new column called `birth_year` which is determined by subtracting their age from the current year, assuming the current year is `2021`.
+
+    The answer should be:
+    ```
+   first_name,last_name,age,birth_year
+    john,doe,55,1966
+    jane,doe,37,1984
+    dave,smith,16,2005
+    henry,clay,87,1934
+    john,smith,34,1987
+    ashley,ray,19,2002
+    king,kong,8,2013
+   ```
+   You will have to convert `age` to an int by taking the variable representing age, call it `curr_age`, and passing it to the `int` function like `int(curr_age)`
